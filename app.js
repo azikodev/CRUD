@@ -10,39 +10,46 @@ if (title.value.length == 0) {
         const editTitle = document.createElement('button')
         const imgElement = document.createElement('li');
         const delCard = document.createElement('button');
-    
+
         const imgSrc = img.value;
-        imgElement.innerHTML = `<img src="${imgSrc}" alt="${title.value}">`;
-    
+        imgElement.innerHTML = `
+        <img src="${imgSrc}" alt="${title.value}">
+        `;
+
         let titleEl = titleElement.textContent = title.value;
-    
-        editTitle.textContent = 'Edit'
-        delCard.textContent = 'Delete'
-    
+
+        editTitle.innerHTML = `
+        <span>Click!</span><span>Edit title</span>
+        `
+        delCard.innerHTML = `
+        <span>Click!</span><span>Delete</span>
+        `
+
         card.className = 'card';
         card.appendChild(titleElement);
         card.appendChild(editTitle);
         card.appendChild(imgElement);
         card.appendChild(delCard);
         cards.appendChild(card);
-    
+
         delCard.addEventListener('click', () => {
             card.className = 'delClass'
         })
-    
-    
+
+
         editTitle.addEventListener('click', () => {
             editTitle.classList.add('displayNone')
             const newInput = document.createElement('input')
             newInput.required = true;
             newInput.value = titleEl
             const saveBtn = document.createElement('button')
-            saveBtn.textContent = 'Save'
+            saveBtn.innerHTML = `
+            <span>Click!</span><span>Save</span>
+            `
             titleElement.parentNode.insertBefore(newInput, titleElement)
             titleElement.parentNode.insertBefore(saveBtn, titleElement)
-            // titleElement.remove('')
             titleElement.classList.add('displayNone')
-            saveBtn.addEventListener('click', () =>{
+            saveBtn.addEventListener('click', () => {
                 editTitle.classList.add('displayBlock')
                 titleElement.textContent = newInput.value
                 titleElement.classList.remove('displayNone')
