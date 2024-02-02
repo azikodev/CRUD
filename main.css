@@ -58,3 +58,6 @@ button {
 img {
     display: flex;
 }
+.delClass {
+    display: none;
+}

@@ -8,6 +8,7 @@ function createCard() {
     titleElement.className = 'titleCard'
     const editTitle = document.createElement('button')
     const imgElement = document.createElement('li'); 
+    const delCard = document.createElement('button'); 
 
     const imgSrc = img.value; 
     imgElement.innerHTML = `<img src="${imgSrc}" alt="${title.value}">`; 
@@ -15,17 +16,23 @@ function createCard() {
     titleElement.textContent = title.value; 
 
     editTitle.textContent = 'edit'
+    delCard.textContent = 'Delete'
 
     card.className = 'card';
     card.appendChild(titleElement); 
     card.appendChild(editTitle); 
     card.appendChild(imgElement); 
+    card.appendChild(delCard); 
     cards.appendChild(card);
 
-    editTitle.addEventListener( 'click', () => {
-        const editInput = document.createElement('input')
-
-        card.appendChild(editInput)
-        
+    delCard.addEventListener('click', () =>{
+        card.className = 'delClass'
     })
+
+    // editTitle.addEventListener( 'click', () => {
+    //     const editInput = document.createElement('input')
+
+    //     card.appendChild(editInput)
+        
+    // })
 }
