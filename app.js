@@ -39,6 +39,7 @@ if (title.value.length == 0) {
 
         editTitle.addEventListener('click', () => {
             editTitle.classList.add('displayNone')
+            // editTitle.required = true;
             const newInput = document.createElement('input')
             newInput.required = true;
             newInput.value = titleEl
@@ -49,6 +50,7 @@ if (title.value.length == 0) {
             titleElement.parentNode.insertBefore(newInput, titleElement)
             titleElement.parentNode.insertBefore(saveBtn, titleElement)
             titleElement.classList.add('displayNone')
+            editTitle.setAttribute('required', 'true')
             saveBtn.addEventListener('click', () => {
                 editTitle.classList.add('displayBlock')
                 titleElement.textContent = newInput.value
