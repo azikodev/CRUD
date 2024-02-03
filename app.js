@@ -15,7 +15,6 @@ if (title.value.length == 0) {
         imgElement.innerHTML = `
         <img src="${imgSrc}" alt="${title.value}">
         `;
-
         let titleEl = titleElement.textContent = title.value;
 
         editTitle.innerHTML = `
@@ -50,8 +49,9 @@ if (title.value.length == 0) {
             titleElement.parentNode.insertBefore(newInput, titleElement)
             titleElement.parentNode.insertBefore(saveBtn, titleElement)
             titleElement.classList.add('displayNone')
-            editTitle.setAttribute('required', 'true')
+            editTitle.setAttribute('disabled', 'true')
             saveBtn.addEventListener('click', () => {
+                editTitle.disabled = false;
                 editTitle.classList.add('displayBlock')
                 titleElement.textContent = newInput.value
                 titleElement.classList.remove('displayNone')
