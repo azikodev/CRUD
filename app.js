@@ -18,10 +18,10 @@ if (title.value.length == 0) {
         let titleEl = titleElement.textContent = title.value;
 
         editTitle.innerHTML = `
-        <span>Click!</span><span>Edit title</span>
+        <span>Edit title</span>
         `
         delCard.innerHTML = `
-        <span>Click!</span><span>Delete</span>
+        <span>Delete</span>
         `
 
         card.className = 'card';
@@ -44,7 +44,7 @@ if (title.value.length == 0) {
             newInput.value = titleEl
             const saveBtn = document.createElement('button')
             saveBtn.innerHTML = `
-            <span>Click!</span><span>Save</span>
+            <span>Save</span>
             `
             titleElement.parentNode.insertBefore(newInput, titleElement)
             titleElement.parentNode.insertBefore(saveBtn, titleElement)
